@@ -1,0 +1,153 @@
+/* style.css */
+
+/* Set the background of the entire page */
+body {
+    background-color: #452c63; 
+    color: #fff; /* White text for contrast */
+    font-family: Arial, sans-serif;
+    background-image: url(image/wallpaperflare.com_wallpaper\ \(5\).jpg);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    flex-wrap: wrap;
+}
+
+/* Container for the form and table */
+.container {
+    background-color: rgba(255, 255, 255, 0.177);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 20px;
+    
+  
+    color: #333;
+    flex-wrap: wrap;
+}
+
+h1 {
+    text-align: center;
+    color: #662d91;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+.btn{
+    padding: 10px;
+    background-color: #4B0082;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+.btn{
+    background-color: #0056b3;
+}
+
+button {
+    padding: 10px;
+    background-color: #4B0082;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Search bar styling */
+.form-search {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    
+    
+}
+
+.form-search input {
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    
+}
+
+#search{
+    margin-top:10px ;
+    width: 200px;
+    
+
+}
+
+/* Table styling */
+table {
+    width: 900px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+    
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #33006F;
+    color: white;
+}
+
+td {
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .container, table {
+        width: 90%;
+    }
+
+    .form-search input {
+        width: 100%;
+    }
+}

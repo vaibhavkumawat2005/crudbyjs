@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="asset/style.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Student data</h1>
+    <div class="form">
+    <div class="form-name">
+        <input type="text" id="name" placeholder="Enter your name">
+    </div>
+    <div class="form-details">
+        <input type="text" id="details" placeholder="Enter your details">
+    </div>
+    <div class="form-button">
+        <button id="add-button" class="btn" onclick="addrecord()">Add Data</button>
+        <button id="update-button" onclick="updaterecord()" style="display: none;">Update data</button>
+        <div class="form-details">
+            <input type="text" id="search" placeholder="Search by Name" oninput="searchBy()">
+        </div>
+    </div>
+   
+</div>
+</div>
+
+</div>
+<div>
+<table>
+    <thead>
+        <th>id</th>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Date</th>
+        <th>Action</th>
+    </thead>
+    <tbody id="records"></tbody>
+</table>
+</div>
+<script src="asset/main.js"></script>
+</body>
+</html>
