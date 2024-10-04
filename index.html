@@ -40,6 +40,21 @@
     <tbody id="records"></tbody>
 </table>
 </div>
+<div  id="editModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Edit Data</h2>
+        <div class="form-name">
+            <label for="">Name</label>
+            <input type="text" id="modal-name" placeholder="Enter your name">
+        </div>
+        <div class="form-details">
+            <label for="">Details</label>
+            <input type="text" id="modal-details" placeholder="Enter your details">
+        </div>
+        <button id="modal-update-button" class="updatemodal" onclick="updaterecord()">Update</button>
+    </div>
+</div>
 <script src="asset/main.js"></script>
 </body>
 </html>

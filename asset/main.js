@@ -31,35 +31,26 @@ function addrecord(){
 
 }
 
-function loadRecord(index){
-    const records = takeRecords();
-    const record = records[index]
+function loadRecord(index) {
+  const records = takeRecords();
+  const record = records[index];
 
-    document.getElementById("name").value=record.name;
-    document.getElementById("details").value=record.details;
+  document.getElementById("modal-name").value = record.name;
+  document.getElementById("modal-details").value = record.details;
 
-  
-    currentIndex = index;
-   
-    document.getElementById("add-button").style.display="none";
-    document.getElementById("update-button").style.display="inline";
-
+  currentIndex = index;
+  openModal();
 }
 
-function updaterecord(){
-    const records= takeRecords();
-    records[currentIndex].name= document.getElementById("name").value.trim();
-    records[currentIndex].details= document.getElementById("details").value.trim();
-    records[currentIndex].date = new Date ();
+function updaterecord() {
+  const records = takeRecords();
+  records[currentIndex].name = document.getElementById("modal-name").value.trim();
+  records[currentIndex].details = document.getElementById("modal-details").value.trim();
+  records[currentIndex].date = new Date();
 
-    localStorage.setItem("records",JSON.stringify(records));
-    clearform();
-    displayRecord();
-
-    document.getElementById("add-button").style.display = "inline";
-    document.getElementById("update-button").style.display = "none";
-    currentIndex = null;
-
+  localStorage.setItem("records", JSON.stringify(records));
+  closeModal();
+  displayRecord();
 }
 
 function deletRecord(index){
@@ -115,8 +106,8 @@ function displayRecord() {
         <td>${record.details}</td>
         <td>${new Date(record.date).toLocaleString()}</td>
         <td>
-          <button onclick ="loadRecord(${index})">Edit</button>
-          <button onclick ="deletRecord(${index})">Delete</button>
+          <button onclick ="loadRecord(${index})" class = "edit-button">Edit</button>
+          <button onclick ="deletRecord(${index})" class = "delete-button">Delete</button>
         </td>
         </tr>
       `;
@@ -130,6 +121,16 @@ function clearform(){
 function getUniqueId(){
     return Math.floor(Math.random() * Date.now());
 
+
+}
+
+function openModal() {
+  document.getElementById("editModal").style.display = "block";
+  
+}
+
+function closeModal() {
+  document.getElementById("editModal").style.display = "none";
 }
 
 
