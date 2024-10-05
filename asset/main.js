@@ -10,6 +10,9 @@ function takeRecords(){
 function addrecord(){
     const nameInput = document.getElementById("name").value.trim();
     const detailsInput = document.getElementById("details").value.trim();
+    const AgeInput = document.getElementById("Age").value.trim();
+    const occupationInput = document.getElementById("occupation").value.trim();
+
 
     if(!nameInput || !detailsInput){
         alert("both name and details are required")
@@ -17,6 +20,8 @@ function addrecord(){
     const newRecord = {
         id: getUniqueId(),
         name: nameInput,
+        age: AgeInput,
+        occupation: occupationInput,
         details: detailsInput,
         date: new Date()
 
@@ -37,6 +42,9 @@ function loadRecord(index) {
 
   document.getElementById("modal-name").value = record.name;
   document.getElementById("modal-details").value = record.details;
+  document.getElementById("modal-Age").value = record.age;
+  document.getElementById("modal-occupation").value = record.occupation;
+  
 
   currentIndex = index;
   openModal();
@@ -47,6 +55,9 @@ function updaterecord() {
   records[currentIndex].name = document.getElementById("modal-name").value.trim();
   records[currentIndex].details = document.getElementById("modal-details").value.trim();
   records[currentIndex].date = new Date();
+  records[currentIndex].age =  document.getElementById("modal-Age").value.trim();
+  records[currentIndex].occupation =  document.getElementById("modal-occupation").value.trim();
+
 
   localStorage.setItem("records", JSON.stringify(records));
   closeModal();
@@ -77,10 +88,13 @@ function searchBy(){
         <td>${record.id}</td>
         <td>${record.name}</td>
         <td>${record.details}</td>
+        <td>${record.age}</td>
+        <td>${record.occupation}</td>
+
         <td>${new Date(record.date).toLocaleString()}</td>
        <td>
-       <button onclick = "loadRecord(${index})">Edit</button>
-       <button onclick = "deleteRecord(${index})">delete</button>
+       <button onclick = "loadRecord(${index})"  class = "edit-button">Edit</button>
+       <button onclick = "deleteRecord(${index})" class = "delete-button">delete</button>
        </td>
        
         </tr>
@@ -104,6 +118,8 @@ function displayRecord() {
         <td>${record.id}</td>
         <td>${record.name}</td>
         <td>${record.details}</td>
+           <td>${record.age}</td>
+           <td>${record.occupation}</td>
         <td>${new Date(record.date).toLocaleString()}</td>
         <td>
           <button onclick ="loadRecord(${index})" class = "edit-button">Edit</button>
@@ -116,6 +132,8 @@ function displayRecord() {
 function clearform(){
     document.getElementById("name").value="";
     document.getElementById("details").value="";
+    document.getElementById("Age").value=""
+    document.getElementById("occupation").value=""
 }
 
 function getUniqueId(){

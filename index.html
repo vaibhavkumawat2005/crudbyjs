@@ -1,60 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="asset/style.css">
 </head>
+
 <body>
     <div class="container">
-    <h1>Student data</h1>
-    <div class="form">
-    <div class="form-name">
-        <input type="text" id="name" placeholder="Enter your name">
-    </div>
-    <div class="form-details">
-        <input type="text" id="details" placeholder="Enter your details">
-    </div>
-    <div class="form-button">
-        <button id="add-button" class="btn" onclick="addrecord()">Add Data</button>
-        <button id="update-button" onclick="updaterecord()" style="display: none;">Update data</button>
-        <div class="form-details">
-            <input type="text" id="search" placeholder="Search by Name" oninput="searchBy()">
-        </div>
-    </div>
-   
-</div>
-</div>
+        <h1>Student data</h1>
+        <div class="form">
+            <div class="form-name">
+                <input type="text" id="name" placeholder="Enter your name">
+                <input type="text" id="details" placeholder="Enter your surname">
+            </div>
+            <!-- <div class="form-details">
+        
+    </div> -->
+            <div class="form-ao">
+                <div class="form-Age">
+                    <input type="number" id="Age" placeholder="Enter your Age">
+                    <input type="text" id="occupation" placeholder="Enter your occupation ">
+                </div>
+                <div class="form-occupation">
 
-</div>
-<div>
-<table>
-    <thead>
-        <th>id</th>
-        <th>Name</th>
-        <th>Details</th>
-        <th>Date</th>
-        <th>Action</th>
-    </thead>
-    <tbody id="records"></tbody>
-</table>
-</div>
-<div  id="editModal" class="modal" style="display: none;">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Edit Data</h2>
-        <div class="form-name">
-            <label for="">Name</label>
-            <input type="text" id="modal-name" placeholder="Enter your name">
+                </div>
+            </div>
+            <div class="form-button">
+                <button id="add-button" class="btn" onclick="addrecord()">Add Data</button>
+                <button id="update-button" onclick="updaterecord()" style="display: none;">Update data</button>
+                <div class="form-details">
+                    <input type="text" id="search" placeholder="Search by Name" oninput="searchBy()">
+                </div>
+            </div>
+
         </div>
-        <div class="form-details">
-            <label for="">Details</label>
-            <input type="text" id="modal-details" placeholder="Enter your details">
-        </div>
-        <button id="modal-update-button" class="updatemodal" onclick="updaterecord()">Update</button>
     </div>
-</div>
-<script src="asset/main.js"></script>
+
+    </div>
+    <div>
+        <table>
+            <thead>
+                <th>id</th>
+                <th>Name</th>
+                <th>SurName</th>
+                <th>Age</th>
+                <th>occupation</th>
+                <th>Date</th>
+                <th>Action</th>
+            </thead>
+            <tbody id="records"></tbody>
+        </table>
+    </div>
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Edit Data</h2>
+            <div class="modal-name">
+
+                <input type="text" id="modal-name" placeholder="Enter your name">
+
+                <input type="text" id="modal-details" placeholder="Enter your details">
+            </div>
+            <div class="form-ai">
+
+                <input type="number" id="modal-Age" placeholder="Enter your Age">
+
+
+                <input type="text" id="modal-occupation" placeholder="Enter your occupation ">
+
+            </div>
+            <button id="modal-update-button" class="updatemodal" onclick="updaterecord()">Update</button>
+        </div>
+    </div>
+    <script src="asset/main.js"></script>
 </body>
+
 </html>
